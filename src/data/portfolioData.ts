@@ -1,0 +1,163 @@
+import { Award, Skill, Project } from "@/types/portfolio";
+
+export const candidateProfile = {
+  name: "Omar Faruk Arif",
+  title: "Data Scientist",
+  status: "Graduated",
+  degree: "B.Sc. in Computer Science & Engineering",
+  major: "Major: Data Science",
+  university: "United International University (UIU)",
+  phone: "+880 1948-121182",
+  email: "arifahmed26610@gmail.com",
+  address: "K-268, Ward-8, Konabari-1746, Gazipur City Corporation, Bangladesh",
+  github: "https://github.com/arif22ah",
+  githubHandle: "arif22ah",
+  linkedin: "https://linkedin.com/in/omarfaruk-arif",
+  kaggle: "https://kaggle.com/omarfarukarif",
+};
+
+export const academicAwards: Award[] = [
+  {
+    id: "award-1",
+    rank: "2nd Place Award",
+    course: "Microprocessor & Microcontroller Lab",
+    institution: "United International University (UIU)",
+  },
+  {
+    id: "award-2",
+    rank: "3rd Place Award",
+    course: "System Analysis & Design",
+    institution: "United International University (UIU)",
+  },
+  {
+    id: "award-3",
+    rank: "3rd Place Award",
+    course: "Database Management System",
+    institution: "United International University (UIU)",
+  },
+];
+
+export const coreSkills: Skill[] = [
+  { name: "Python", category: "core", badge: "Core Language", description: "Statistical modeling, async pipelines, scientific computing, and automation." },
+  { name: "PostgreSQL & MySQL", category: "core", badge: "Relational SQL", description: "Complex CTEs, window functions, indexing, and AST read-only query validation." },
+  { name: "NumPy & Pandas", category: "core", badge: "Data Wrangling", description: "Vectorized tabular manipulation, time-series aggregation, and feature pipelines." },
+  { name: "Matplotlib & Seaborn", category: "core", badge: "Statistical Plots", description: "Publication-grade distribution plots, uplift curves, and diagnostic visuals." },
+  { name: "Tableau", category: "core", badge: "Executive BI", description: "Interactive KPI storytelling, cohort retention dashboards, and revenue attribution." },
+  { name: "Scikit-learn", category: "ml", badge: "Classical ML", description: "Custom transformers, Isolation Forest, propensity calibration, and cross-validation." },
+  { name: "XGBoost & LightGBM", category: "ml", badge: "Tabular SOTA", description: "Gradient-boosted decision trees optimized for high-dimensional tabular datasets." },
+  { name: "PyTorch", category: "ml", badge: "Deep Learning", description: "LSTM-Autoencoders for streaming telemetry and neural collaborative embeddings." },
+  { name: "TensorFlow", category: "ml", badge: "Neural Networks", description: "Deep sequence architectures, custom loss functions, and multi-task representation learning." },
+  { name: "LangChain", category: "mlops", badge: "Agentic AI", description: "Multi-agent Text-to-SQL workflows, deterministic AST guardrails, and self-correction loops." },
+  { name: "FastAPI", category: "mlops", badge: "Inference API", description: "Low-latency async REST endpoints with strict Pydantic schema validation." },
+  { name: "MLflow", category: "mlops", badge: "Model Registry", description: "Experiment tracking, challenger-vs-champion evaluation, and artifact versioning." },
+  { name: "Streamlit", category: "mlops", badge: "Data Apps", description: "Interactive model observability dashboards and stakeholder decision sandboxes." },
+  { name: "Docker & Git/GitHub", category: "mlops", badge: "Reproducibility", description: "Containerized multi-service deployments, version control, and CI evaluation suites." },
+];
+
+export const productionProjects: Project[] = [
+  {
+    id: 1,
+    number: "01",
+    category: "genai",
+    title: "Multi-Agent Data Analyst (Text-to-SQL with Guardrails & Evaluation)",
+    badge: "Agentic SQL • AST Governance • Benchmark Suite",
+    problem: "Standard LLM Text-to-SQL demos hallucinate schema columns, expose databases to destructive queries, and lack quantitative accuracy benchmarks.",
+    solution: "Engineered a multi-agent analytics pipeline that inspects PostgreSQL schemas, compiles deterministic SQL verified by an AST read-only guardrail, and synthesizes visual findings.",
+    highlights: [
+      "100% interception of destructive DDL/DML statements (DROP, DELETE, UPDATE) via AST inspection.",
+      "Automated 150-query offline evaluation suite achieving 94.2% execution accuracy.",
+      "Self-healing execution loop that parses PostgreSQL traceback errors and rewrites queries automatically.",
+    ],
+    workflow: ["Business Question", "Schema Retriever", "SQL Generator", "AST Read-Only Guard", "PostgreSQL", "Visual Synthesis"],
+    stack: ["Python", "PostgreSQL", "LangChain", "FastAPI", "Streamlit", "Docker"],
+    metrics: [
+      { label: "Eval Execution Acc", value: "94.2%" },
+      { label: "DML Blocked", value: "100%" },
+      { label: "Avg Latency", value: "1.4s" },
+    ],
+  },
+  {
+    id: 2,
+    number: "02",
+    category: "mlops",
+    title: "Data Drift & Model Decay Monitoring Platform",
+    badge: "Covariate Shift • PSI & KS Tests • Auto-Retraining",
+    problem: "Models degrade silently in production when macroeconomic or user behavior distributions shift away from training baselines.",
+    solution: "Built a continuous observability platform that evaluates incoming production batches using Population Stability Index (PSI) and Kolmogorov-Smirnov (KS) tests, triggering automated retraining when ROC-AUC decays.",
+    highlights: [
+      "Automated feature drift alerting when PSI exceeds the 0.25 critical threshold.",
+      "Automated challenger model retraining and validation against holdout benchmarks in MLflow.",
+      "Restored live ROC-AUC from 0.789 back to 0.896 (+8.4% recovery) upon distribution shift.",
+    ],
+    workflow: ["Production Batches", "PSI / KS Drift Test", "Threshold Check (>0.25)", "Retraining Pipeline", "MLflow Registry", "Live Dashboard"],
+    stack: ["Python", "XGBoost", "Scikit-learn", "MLflow", "Streamlit", "Docker"],
+    metrics: [
+      { label: "Drift Trigger", value: "PSI > 0.25" },
+      { label: "AUC Recovery", value: "+8.4%" },
+      { label: "Registry Audit", value: "MLflow" },
+    ],
+  },
+  {
+    id: 3,
+    number: "03",
+    category: "causal",
+    title: "Causal Inference: Marketing Uplift Modeling",
+    badge: "Causal ML • CATE Estimation • Margin Optimization",
+    problem: "Standard predictive churn models target high-propensity buyers ('Sure Things'), wasting promotional margin on customers who would purchase without a discount.",
+    solution: "Applied Conditional Average Treatment Effect (CATE) estimation and Propensity Score Matching to isolate 'Persuadables' from 'Sure Things' and 'Sleeping Dogs'.",
+    highlights: [
+      "Segmented 100,000 customers into four causal quadrants using LightGBM meta-learners.",
+      "Eliminated promotional subsidies for 34.1% of organic buyers ('Sure Things').",
+      "Generated +$148.2K in net incremental revenue compared to blanket targeting.",
+    ],
+    workflow: ["Observational Logs", "Propensity Matching", "CATE Meta-Learner", "Quadrant Segmentation", "ROI Policy"],
+    stack: ["Python", "LightGBM", "Scikit-learn", "Pandas", "Seaborn"],
+    metrics: [
+      { label: "Net Revenue Lift", value: "+$148K" },
+      { label: "Saved Margin", value: "34.1%" },
+      { label: "Refutation p-val", value: "< 0.01" },
+    ],
+  },
+  {
+    id: 4,
+    number: "04",
+    category: "mlops",
+    title: "Real-Time Anomaly Detection on Streaming Sensor Data",
+    badge: "PyTorch Autoencoder • Isolation Forest • Low Latency",
+    problem: "Batch diagnostics detect mechanical turbine and server anomalies hours after physical degradation has already occurred.",
+    solution: "Architected a low-latency streaming consumer comparing a PyTorch Reconstruction Autoencoder against Scikit-learn's Isolation Forest on high-frequency telemetry.",
+    highlights: [
+      "PyTorch Autoencoder achieved 96.4% precision and 94.8% recall on subtle multi-sensor faults.",
+      "Sub-20ms inference latency with persistent time-series anomaly logging in PostgreSQL.",
+      "Interactive fault-injection sandbox for stress-testing operator alert thresholds.",
+    ],
+    workflow: ["Sensor Stream", "Sliding Window", "PyTorch Autoencoder", "MSE Threshold", "PostgreSQL Log", "Alert UI"],
+    stack: ["Python", "PyTorch", "Scikit-learn", "PostgreSQL", "Streamlit", "Docker"],
+    metrics: [
+      { label: "Model Precision", value: "96.4%" },
+      { label: "Inference Latency", value: "18 ms" },
+      { label: "Throughput", value: "5k msg/s" },
+    ],
+  },
+  {
+    id: 5,
+    number: "05",
+    category: "causal",
+    title: "Hybrid Recommendation Engine with Statistical A/B Testing",
+    badge: "Neural Embeddings • Cold-Start • Two-Sample Z-Test",
+    problem: "Offline RMSE metrics rarely translate to online conversion gains and fail when new users enter the platform without interaction history.",
+    solution: "Combined collaborative filtering with PyTorch item embeddings and cold-start metadata fallbacks, validated via a multi-thousand-session statistical A/B test simulator.",
+    highlights: [
+      "Hybrid ranking blending collaborative signals with content similarity vectors.",
+      "Cold-start fallback routing for zero-history sessions.",
+      "Demonstrated +37.8% CTR lift over popularity baseline (p = 0.00018 via two-sample Z-test).",
+    ],
+    workflow: ["User Session", "Cold-Start Router", "PyTorch Embeddings", "FastAPI Scorer", "A/B Traffic Split", "Z-Test Eval"],
+    stack: ["Python", "PyTorch", "Scikit-learn", "FastAPI", "Pandas", "Docker"],
+    metrics: [
+      { label: "Simulated CTR Lift", value: "+37.8%" },
+      { label: "Significance", value: "p = 0.00018" },
+      { label: "API p95 Latency", value: "24 ms" },
+    ],
+  },
+];
